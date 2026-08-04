@@ -22,6 +22,17 @@ def course():
 def trainers():
     return rnder_template("trainers.html")
 
+@app.route('/register',methods=["GET","POST"])
+def register():
+    if request.method=="POST":
+        name=request.form.get["name"]
+        email=request.form.get["email"]
+        password=request.form.get["password"]
+        dob=request.form.get["dob"]
+        gender=request.form["gender"]
+        course=request.form["course"]
+        return render_template("register.html")
+
 
 if __name__ == '__main__':
     app.run(debug=True)
